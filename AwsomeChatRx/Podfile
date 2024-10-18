@@ -1,0 +1,39 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '13.0'
+
+def rx_swift
+  pod 'RxSwift', '6.7.1'
+  pod 'RxCocoa', '6.7.1'
+end
+
+def firebase
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+end
+
+
+target 'AwsomeChatRx' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+  rx_swift
+  firebase
+  pod 'R.swift'
+  pod 'SteviaLayout'
+  # Pods for AwsomeChatRx
+
+end
+
+target 'Domain' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  rx_swift
+end
+
+target 'Platform' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  firebase
+  rx_swift
+end
